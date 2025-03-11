@@ -50,6 +50,11 @@ body {
 .title-container h2 {
   font-size: 1.2rem;
   font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+.title-container h2:hover {
+  transform: scale(1.05);
 }
 
 .toggle-container {
@@ -264,30 +269,40 @@ body {
 @media (max-width: 600px) {
   .header {
     max-width: 100%;
+    padding-top: 60px;
   }
-  
+
+  .toggle-container {
+    top: 10px;
+    right: 10px;
+  }
+
+  .title-container {
+    padding-top: 20px;
+  }
+
   .title-container h1 {
     font-size: 2rem;
   }
-  
+
   .title-container h2 {
     font-size: 1rem;
   }
-  
+
   .cell {
     width: 80px;
     height: 80px;
     font-size: 2rem;
   }
-  
+
   .game-board {
     max-width: 280px;
   }
-  
+
   .scoreboard {
     width: 280px;
   }
-  
+
   .game-controls {
     flex-direction: column;
     gap: 10px;

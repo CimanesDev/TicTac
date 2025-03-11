@@ -130,7 +130,9 @@ const TicTacToe = () => {
         <div className="header">
           <div className="title-container">
             <h1>TicTacToe</h1>
+            <a href="https://github.com/CimanesDev" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
             <h2>by CimanesDev</h2>
+            </a>
           </div>
         </div>
 
@@ -160,7 +162,9 @@ const TicTacToe = () => {
       <div className="header">
         <div className="title-container">
           <h1>TicTacToe</h1>
+          <a href="https://github.com/CimanesDev" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
           <h2>by CimanesDev</h2>
+          </a>
         </div>
       </div>
       
