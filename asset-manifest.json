@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/CimanesDev/TicTac/static/css/main.e98dbaa8.css",
-    "main.js": "/CimanesDev/TicTac/static/js/main.3b1d2e77.js",
-    "index.html": "/CimanesDev/TicTac/index.html",
-    "main.e98dbaa8.css.map": "/CimanesDev/TicTac/static/css/main.e98dbaa8.css.map",
-    "main.3b1d2e77.js.map": "/CimanesDev/TicTac/static/js/main.3b1d2e77.js.map"
+    "main.css": "/TicTac/static/css/main.e98dbaa8.css",
+    "main.js": "/TicTac/static/js/main.3b1d2e77.js",
+    "index.html": "/TicTac/index.html",
+    "main.e98dbaa8.css.map": "/TicTac/static/css/main.e98dbaa8.css.map",
+    "main.3b1d2e77.js.map": "/TicTac/static/js/main.3b1d2e77.js.map"
   },
   "entrypoints": [
     "static/css/main.e98dbaa8.css",
