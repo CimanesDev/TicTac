@@ -1,0 +1,295 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Space Mono', monospace;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.dark-mode {
+  background-color: #272727;
+  color: white;
+}
+
+.light-mode {
+  background-color: white;
+  color: #272727;
+}
+
+.header {
+  margin-bottom: 2rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.title-container h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.title-container h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+.toggle-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* thanks to UIVERSE for this toggle switch */
+.toggle-switch {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  --light: #d8dbe0;
+  --dark: #28292c;
+  --link: rgb(27, 129, 112);
+  --link-hover: rgb(24, 94, 82);
+}
+
+.switch-label {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color: var(--dark);
+  border-radius: 25px;
+  cursor: pointer;
+  border: 3px solid var(--dark);
+}
+
+.checkbox {
+  position: absolute;
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider {
+  background-color: var(--light);
+}
+
+.slider::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
+  box-shadow: inset 12px -4px 0px 0px var(--light);
+  background-color: var(--dark);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.checkbox:checked ~ .slider::before {
+  -webkit-transform: translateX(50px);
+  -ms-transform: translateX(50px);
+  transform: translateX(50px);
+  background-color: var(--dark);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.mode-selection {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mode-selection button {
+  padding: 15px 30px;
+  background-color: #272727;
+  color: white;
+  border: 2px solid white;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  width: 250px;
+  font-family: 'Space Mono', monospace;
+}
+
+.light-mode .mode-selection button {
+  background-color: white;
+  color: #272727;
+  border: 2px solid #272727;
+}
+
+.mode-selection button:hover {
+  transform: translateY(-2px);
+}
+
+/* Game info */
+.game-info {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.game-info h3 {
+  margin-bottom: 10px;
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-around;
+  background-color: #333;
+  border-radius: 8px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  width: 320px;
+}
+
+.light-mode .scoreboard {
+  background-color: #eee;
+}
+
+.turn-indicator {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.winner-announcement {
+  margin-bottom: 20px;
+  text-align: center;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  max-width: 330px;
+  background-color: #333;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.light-mode .game-board {
+  background-color: #eee;
+}
+
+.cell {
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.cell.dark {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.cell.light {
+  background-color: #f0f0f0;
+  color: #272727;
+}
+
+.winning-cell {
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  transform: scale(1.05);
+}
+
+.light-mode .winning-cell {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.game-controls {
+  margin-top: 30px;
+  display: flex;
+  gap: 15px;
+}
+
+.game-controls button {
+  padding: 10px 20px;
+  background-color: transparent;
+  color: inherit;
+  border: 2px solid currentColor;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  font-family: 'Space Mono', monospace;
+}
+
+.game-controls button:hover {
+  transform: translateY(-2px);
+}
+
+/* for mobile phones cos im sick of ppl calling me out for irresponsive code */
+@media (max-width: 600px) {
+  .header {
+    max-width: 100%;
+  }
+  
+  .title-container h1 {
+    font-size: 2rem;
+  }
+  
+  .title-container h2 {
+    font-size: 1rem;
+  }
+  
+  .cell {
+    width: 80px;
+    height: 80px;
+    font-size: 2rem;
+  }
+  
+  .game-board {
+    max-width: 280px;
+  }
+  
+  .scoreboard {
+    width: 280px;
+  }
+  
+  .game-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
